@@ -229,23 +229,46 @@
 //optional chaining ? it ignore the null or undefined value if you are destruute
 
 
-const user = {
-    uid: "c2115",
-    uName: "Jagmohan Rai",
-    age: "Esi bate batai nhi jati hai",
-    kaam: function () {
-        console.log("I am a FSD Coach")
-    },
-    vision: {
-        Sabko: "Barbad karna ",
-        kaamHua: function () {
-            console.log("Nhi hua lekin kar dunga")
-        },
-        arr:undefined
-    }
+// const user = {
+//     uid: "c2115",
+//     uName: "Jagmohan Rai",
+//     age: "Esi bate batai nhi jati hai",
+//     kaam: function () {
+//         console.log("I am a FSD Coach")
+//     },
+//     vision: {
+//         Sabko: "Barbad karna ",
+//         kaamHua: function () {
+//             console.log("Nhi hua lekin kar dunga")
+//         },
+//         arr:undefined
+//     }
 
+// }
+// console.log(user.uid)
+// // console.log(user ?.vision ?.kaam())
+// // console.log(user ?.vision .kaam())
+// console.log(user ?.vision?.arr?.map(i=>console.log(i)))
+let arr1 = []
+async function apicall(url) {
+    try {
+        const data = await fetch(url);
+        console.log(data)
+        const res = await data.json()
+        // console.log(res)
+        for (let i = 0; i < res.length; i++) {
+            arr1.push(res[i])
+        }
+        // return arr1
+    } catch (e) {
+        console.log(e)
+    }
 }
-console.log(user.uid)
-// console.log(user ?.vision ?.kaam())
-// console.log(user ?.vision .kaam())
-console.log(user ?.vision?.arr?.map(i=>console.log(i)))
+// apicall("https://jsonplaceholder.typicode.com/posts")
+// setTimeout(()=>console.log(arr1),5000)
+console.log(arr1)
+// async function fun() {
+//     let ans = await apicall("https://jsonplaceholder.typicode.com/posts");
+//     // console.log(ans)
+// }
+// fun();
